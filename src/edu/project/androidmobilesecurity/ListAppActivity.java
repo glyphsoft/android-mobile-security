@@ -8,9 +8,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.Toast;
 
 public class ListAppActivity extends ListActivity {
 	
@@ -32,13 +29,6 @@ public class ListAppActivity extends ListActivity {
 		}
 		
 		setListAdapter(new AppArrayAdapter(this, results.toArray(new String[results.size()])));
-
-	}
-
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		String selectedValue = (String) getListAdapter().getItem(position);
-		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
 
 	}
 	
