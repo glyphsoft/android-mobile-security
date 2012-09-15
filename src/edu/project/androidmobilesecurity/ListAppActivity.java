@@ -14,10 +14,6 @@ import android.widget.Toast;
 
 public class ListAppActivity extends ListActivity {
 	
-	
-	static final String[] MOBILE_OS = 
-            new String[] { "Android", "iOS", "WindowsMobile", "Blackberry"};
-	
 	private List<String> results = new ArrayList<String>();
 
 	@Override
@@ -46,27 +42,4 @@ public class ListAppActivity extends ListActivity {
 
 	}
 	
-//	private ListView listView;
-//	private ArrayList<String> results = new ArrayList<String>();
-//
-//	@SuppressWarnings({ "unchecked", "rawtypes" })
-//	@Override
-//	public void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_list_app);
-//		listView = (ListView) findViewById(R.id.list_view);
-//		
-//		PackageManager pm = this.getPackageManager();
-//
-//		Intent intent = new Intent(Intent.ACTION_MAIN, null);
-//		intent.addCategory(Intent.CATEGORY_LAUNCHER);
-//
-//		List<ResolveInfo> list = pm.queryIntentActivities(intent, PackageManager.PERMISSION_GRANTED);
-//		
-//		for (ResolveInfo rInfo : list) {
-//			results.add(rInfo.activityInfo.applicationInfo.loadLabel(pm).toString());
-//		}
-//		 
-//		listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, results));
-//	}
 }
