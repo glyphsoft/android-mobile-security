@@ -3,7 +3,7 @@
     <string name="app_name">AndroidMobileSecurity</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Android Application Security</string>
-    <string name="title_activity_list_app">ListAppActivity</string>
+    <string name="title_activity_list_app">Restrictions</string>
 
     <string name="menu_about">About</string>
     

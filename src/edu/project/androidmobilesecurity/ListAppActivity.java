@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -32,10 +31,8 @@ public class ListAppActivity extends Activity {
 		
 		for (ResolveInfo rInfo : list) {
 			results.add(rInfo.activityInfo.applicationInfo.loadLabel(pm).toString());
-			Log.w("Installed Applications", rInfo.activityInfo.applicationInfo
-					.loadLabel(pm).toString());
 		}
-		
+		 
 		listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, results));
 	}
 }

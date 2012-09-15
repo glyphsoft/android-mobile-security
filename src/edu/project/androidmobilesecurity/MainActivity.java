@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
@@ -32,7 +33,7 @@ public class MainActivity extends ListActivity {
 				// TODO when clicked...
 				
 				Toast.makeText(getApplicationContext(),
-						"Selected: "+position, Toast.LENGTH_SHORT).show();
+						"Selected: "+((TextView) view).getText(), Toast.LENGTH_SHORT).show();
 				
 				Intent intent = new Intent(MainActivity.this, ListAppActivity.class);
 				
