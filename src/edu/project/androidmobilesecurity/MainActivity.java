@@ -35,7 +35,8 @@ public class MainActivity extends ListActivity {
 				Toast.makeText(getApplicationContext(),
 						"Selected: "+((TextView) view).getText(), Toast.LENGTH_SHORT).show();
 				
-				Intent intent = new Intent(MainActivity.this, ListAppActivity.class);
+				//Intent intent = new Intent(MainActivity.this, ListAppActivity.class);
+				Intent intent = new Intent(MainActivity.this, ImageCaptureActivity.class);
 				
 				switch (position) {
 		        	case 1: startActivity(intent);

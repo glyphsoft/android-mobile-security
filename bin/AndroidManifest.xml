@@ -6,6 +6,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
+    
+    <uses-feature android:name="android.hardware.camera"></uses-feature> 
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -26,6 +28,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androidstarter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ImageCaptureActivity"
+            android:label="@string/title_activity_image_capture" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.project.androidmobilesecurity.MainActivity" />
         </activity>
     </application>
 
