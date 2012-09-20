@@ -8,5 +8,7 @@
     <string name="capture_image">Capture Image</string>
     <string name="image_description">Image</string>
     <string name="title_activity_image_capture">Image Capture Activity</string>
+    <string name="send_email">Email sent successfully</string>
+    <string name="title_activity_send_email">SendEmailActivity</string>
 
 </resources>
