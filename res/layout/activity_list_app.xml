@@ -3,12 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
+    <ImageView
+      android:id="@+id/icon"
+      android:contentDescription="@string/image_description"
+      android:layout_width="wrap_content"
+      android:layout_height="fill_parent"
+      android:layout_marginLeft="10dp">
+    </ImageView>
+    
     <TextView
         android:id="@+id/label"
+        android:text="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="30dp" >
+        android:textSize="18dp"
+        android:layout_marginLeft="10dp" 
+        android:layout_toRightOf="@id/icon">
     </TextView>
 
     <CheckBox
@@ -16,7 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="4dp"
         android:layout_marginRight="10dp" >
     </CheckBox>
 

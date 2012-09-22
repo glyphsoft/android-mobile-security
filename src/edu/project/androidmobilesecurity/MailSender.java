@@ -21,6 +21,8 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import android.util.Log;
+
 public class MailSender extends javax.mail.Authenticator {
 	
 	private String mailhost = "smtp.gmail.com";   
@@ -58,32 +60,44 @@ public class MailSender extends javax.mail.Authenticator {
 
     public synchronized void sendMail(String subject, String body, String sender, String recipients,  String attachment) throws Exception {   
         try{
-        MimeMessage message = new MimeMessage(session);   
-        DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));   
-        message.setSender(new InternetAddress(sender));   
-        message.setSubject(subject);   
-        message.setDataHandler(handler);   
-        if (recipients.indexOf(',') > 0)   
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));   
-        else  
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients)); 
-        
-//        BodyPart messageBodyPart = new MimeBodyPart(); 
-//        DataSource source = new FileDataSource(attachment); 
-//        messageBodyPart.setDataHandler(new DataHandler(source)); 
-//        messageBodyPart.setFileName(attachment); 
-//        _multipart.addBodyPart(messageBodyPart);
-//
-//        BodyPart messageBodyPart2 = new MimeBodyPart(); 
-//        messageBodyPart2.setText(subject); 
-//
-//        _multipart.addBodyPart(messageBodyPart2);
+        	MimeMessage message = new MimeMessage(session);   
+            DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));   
+            message.setSender(new InternetAddress(sender));   
+            message.setSubject(subject);   
+            message.setDataHandler(handler);   
+            if (recipients.indexOf(',') > 0)   
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));   
+            else  
+                message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
+            
+            Transport.send(message); 
+            
+//        MimeMessage message = new MimeMessage(session);   
+//        DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));   
+//        message.setSender(new InternetAddress(sender));   
+//        message.setSubject(subject);   
+//        message.setDataHandler(handler);   
+//        if (recipients.indexOf(',') > 0)   
+//            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));   
+//        else  
+//            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients)); 
 //        
-//        message.setContent(_multipart);
-        
-        Transport.send(message);   
+////        BodyPart messageBodyPart = new MimeBodyPart(); 
+////        DataSource source = new FileDataSource(attachment); 
+////        messageBodyPart.setDataHandler(new DataHandler(source)); 
+////        messageBodyPart.setFileName(attachment); 
+////        _multipart.addBodyPart(messageBodyPart);
+////
+////        BodyPart messageBodyPart2 = new MimeBodyPart(); 
+////        messageBodyPart2.setText(subject); 
+////
+////        _multipart.addBodyPart(messageBodyPart2);
+////        
+////        message.setContent(_multipart);
+//        
+//        Transport.send(message);   
         }catch(Exception e){
-
+        	 Log.e("SendMail", e.getMessage(), e);  
         }
     }   
 
